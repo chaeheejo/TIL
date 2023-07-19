@@ -1,10 +1,9 @@
 ## HTML
-<br>
 
-### 태그 종류
 head : 문서에 대한 정의, title, css 내용이 들어갈 수 있다.  
 body : 실제 문서에 대한 내용, script 내용이 들어갈 수 있다.
 
+## 태그 종류
 - h : 주로 제목에 사용  
 - ul : unordered list  
 - ol : ordered list  
