@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    /* 1. flex란?
+    부모에서 자식의 위치를 쉽게 결정하고 싶을 때*/
+    .flex-default-parent{
+      border: 1px solid black;
+      height: 300px;
+
+      /* 부모에 flex를 주면 자식들이 정렬됨 기본 정렬은 행
+      : 자식들이 꽂히는 메인 오뎅 꼬치가 행이라는 뜻 */
+      display: flex;
+    }
+    .flex-default-child{
+      border: 1px solid blue;
+    }
+
+    /* 2. flex - 방향 설정
+    자식들을 행으로 정렬하고 싶을 때 */
+    .flex-row-parent{
+      border: 1px solid black;
+      height: 300px;
+      display: flex;
+
+      /* 메인 꼬치가 열 : 자식들이 열을 기준으로 꽂힘 */
+      flex-direction: column;
+    }
+    .flex-row-child{
+      border: 1px solid blue;
+    }
+
+    /* 3. flex - 메인축 정렬 */
+    .flex-justify-parent{
+      border: 1px solid black;
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+
+      justify-content: center;
+    }
+    .flex-justify-child{
+      border: 1px solid blue;
+    }
+
+    /* 4. flex - 교차축 정렬 */
+    .flex-align-parent{
+      border: 1px solid black;
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+
+      align-items: center;
+    }
+    .flex-align-child{
+      border: 1px solid blue;
+    }
+
+    /* 5. flex - 메인축, 교차축 정렬 */
+    .flex-both-parent{
+      border: 1px solid black;
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+
+      justify-content: center;
+      align-items: center;
+    }
+    .flex-both-child{
+      border: 1px solid blue;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- 1. flex란? -->
+  <div class="flex-default-parent">
+    <div class="flex-default-child">default-row-child1</div>
+    <div class="flex-default-child">default-row-child2</div>
+    <div class="flex-default-child">default-row-child3</div>
+  </div>
+
+  <!-- 2. flex - 방향 설정 -->
+  <div class="flex-row-parent">
+    <div class="flex-row-child">col-child1</div>
+    <div class="flex-row-child">col-child2</div>
+    <div class="flex-row-child">col-child3</div>
+  </div>
+
+  <!-- 3. flex - 메인축 정렬 -->
+  <div class="flex-justify-parent">
+    <div class="flex-justify-child">justify-child1</div>
+    <div class="flex-justify-child">justify-child2</div>
+    <div class="flex-justify-child">justify-child3</div>
+  </div>
+
+  <!-- 4. flex - 교차축 정렬 -->
+  <div class="flex-align-parent">
+    <div class="flex-align-child">align-child1</div>
+    <div class="flex-align-child">align-child2</div>
+    <div class="flex-align-child">align-child3</div>
+  </div>
+
+  <!-- 5. flex - 메인축, 교차축 정렬 -->
+  <div class="flex-both-parent">
+    <div class="flex-both-child">both-child1</div>
+    <div class="flex-both-child">both-child2</div>
+    <div class="flex-both-child">both-child3</div>
+  </div>
+</body>
+</html>
