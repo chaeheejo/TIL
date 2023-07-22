@@ -40,6 +40,8 @@ body : 실제 문서에 대한 내용, html과 script 내용이 들어간다.
 
 ## CSS
 
+> Cascading Style Sheets
+
 ### name
 
 div.font-wrapper : div의 클래스 이름 font-wrapper
