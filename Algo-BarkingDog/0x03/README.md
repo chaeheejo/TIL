@@ -1,3 +1,5 @@
+[배열](https://blog.encrypted.gg/927)
+
 ## 배열
 
 ### 메모리 할당
