@@ -22,8 +22,6 @@
 2. for문으로 하나하나 전부 접근해 바꾸는 방식
 3. algorithm STL의 fill 함수
 
----
-
 ## STL vector
 
 ### 시간 복잡도

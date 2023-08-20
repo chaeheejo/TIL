@@ -1,6 +1,6 @@
 [덱](https://blog.encrypted.gg/935)
 
-### 시간 복잡도
+## 시간 복잡도
 
 원소 추가/제거 - O(1)
 
@@ -10,7 +10,7 @@
 
 양쪽 끝에서 삽입, 삭제 모두 가능
 
-### STL code
+## STL code
 ```cpp
 deque<int> dq;
 

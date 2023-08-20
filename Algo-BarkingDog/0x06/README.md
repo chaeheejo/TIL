@@ -1,11 +1,3 @@
-[큐](https://blog.encrypted.gg/932)
-
-## 시간 복잡도
-
-원소 추가/제거 - O(1)
-
-제일 상단의 원소 확인 - O(1)
-
 [큐](https://blog.encrypted.gg/934)
 
 ## 시간 복잡도
