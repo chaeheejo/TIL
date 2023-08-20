@@ -22,28 +22,35 @@ int main() {
         }
 
         stack<char> st;
-        int idx = 0, open = 0, close = 0;
-        while (idx < str.size()-1) {
-            if (str[idx] == '[' || str[idx]=='(') {
-                st.push(str[idx]);
-                open = 1;
+        bool flag = false;
+        for(auto s : str){
+            if(s=='(' || s=='['){
+                st.push(s);
             }
-            else if (str[idx] == ']') {
-
-            }
-            else if (str[idx] == ')') {
-
-            }
-            else if (open && str[idx] == ']' || str[idx] == ')') {
-                while(!st.empty() && st.top())
-                if (('A' <= st.top() && 'Z' >= st.top()) || ('a' <= st.top() && 'z' >= st.top())) {
-                    st.pop();
+            else if(s==')'){
+                if(st.empty() || st.top()!='('){
+                    flag=true;
+                    break;
                 }
+                st.pop();
             }
-            if (open) {
-                st.push(str[idx]);
+            else if(s==']'){
+                if(st.empty() || st.top()!='['){
+                    flag=true;
+                    break;
+                }
+                st.pop();
             }
-            idx++;
+        }
+        if(!st.empty()){
+            flag=true;
+        }
+        
+        if(flag){
+            cout<<"no\n";
+        }
+        else{
+            cout<<"yes\n";
         }
     }
 
