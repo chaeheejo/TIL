@@ -6,21 +6,21 @@
 
 | 문제 분류 | 문제 | 문제 제목 | 정답 코드 | 풀이 여부 |
 | :--: | :--: | :--: | :--: | :--: |
-| 연습 문제 | 1926 | [그림](https://www.acmicpc.net/problem/1926) | [정답 코드](../0x09/solutions/1926.cpp) |
+| 연습 문제 | 1926 | [그림](https://www.acmicpc.net/problem/1926) | [정답 코드](../0x09/solutions/1926.cpp) | O |
 | 연습 문제 | 2178 | [미로 탐색](https://www.acmicpc.net/problem/2178) | [정답 코드](../0x09/solutions/2178.cpp) | O |
-| 연습 문제 | 7576 | [토마토](https://www.acmicpc.net/problem/7576) | [정답 코드](../0x09/solutions/7576.cpp) |
-| 연습 문제 | 4179 | [불!](https://www.acmicpc.net/problem/4179) | [정답 코드](../0x09/solutions/4179.cpp) |
-| 연습 문제 | 1697 | [숨바꼭질](https://www.acmicpc.net/problem/1697) | [정답 코드](../0x09/solutions/1697.cpp) |
-| 기본 문제✔ | 1012 | [유기농 배추](https://www.acmicpc.net/problem/1012) | [정답 코드](../0x09/solutions/1012.cpp) |
+| 연습 문제 | 7576 | [토마토](https://www.acmicpc.net/problem/7576) | [정답 코드](../0x09/solutions/7576.cpp) | O |
+| 연습 문제 | 4179 | [불!](https://www.acmicpc.net/problem/4179) | [정답 코드](../0x09/solutions/4179.cpp) | O |
+| 연습 문제 | 1697 | [숨바꼭질](https://www.acmicpc.net/problem/1697) | [정답 코드](../0x09/solutions/1697.cpp) | O |
+| 기본 문제✔ | 1012 | [유기농 배추](https://www.acmicpc.net/problem/1012) | [정답 코드](../0x09/solutions/1012.cpp) | O |
 | 기본 문제✔ | 10026 | [적록색약](https://www.acmicpc.net/problem/10026) | [정답 코드](../0x09/solutions/10026.cpp) | O |
 | 기본 문제✔ | 7569 | [토마토](https://www.acmicpc.net/problem/7569) | [정답 코드](../0x09/solutions/7569.cpp) | O |
-| 기본 문제✔ | 7562 | [나이트의 이동](https://www.acmicpc.net/problem/7562) | [정답 코드](../0x09/solutions/7562.cpp) |
-| 기본 문제✔ | 5427 | [불](https://www.acmicpc.net/problem/5427) | [정답 코드](../0x09/solutions/5427.cpp) |
+| 기본 문제✔ | 7562 | [나이트의 이동](https://www.acmicpc.net/problem/7562) | [정답 코드](../0x09/solutions/7562.cpp) | O |
+| 기본 문제✔ | 5427 | [불](https://www.acmicpc.net/problem/5427) | [정답 코드](../0x09/solutions/5427.cpp) | O |
 | 기본 문제 | 2583 | [영역 구하기](https://www.acmicpc.net/problem/2583) | [정답 코드](../0x09/solutions/2583.cpp) |
 | 기본 문제 | 2667 | [단지번호붙이기](https://www.acmicpc.net/problem/2667) | [정답 코드](../0x09/solutions/2667.cpp) |
 | 기본 문제 | 5014 | [스타트링크](https://www.acmicpc.net/problem/5014) | [정답 코드](../0x09/solutions/5014.cpp) |
 | 기본 문제 | 2468 | [안전 영역](https://www.acmicpc.net/problem/2468) | [정답 코드](../0x09/solutions/2468.cpp) |
-| 기본 문제 | 6593 | [상범 빌딩](https://www.acmicpc.net/problem/6593) | [정답 코드](../0x09/solutions/6593.cpp) |
+| 기본 문제 | 6593 | [상범 빌딩](https://www.acmicpc.net/problem/6593) | [정답 코드](../0x09/solutions/6593.cpp) | O |
 | 응용 문제✔ | 2206 | [벽 부수고 이동하기](https://www.acmicpc.net/problem/2206) | [정답 코드](../0x09/solutions/2206.cpp) | O |
 | 응용 문제✔ | 9466 | [텀 프로젝트](https://www.acmicpc.net/problem/9466) | [정답 코드](../0x09/solutions/9466.cpp) |
 | 응용 문제✔ | 2573 | [빙산](https://www.acmicpc.net/problem/2573) | [정답 코드](../0x09/solutions/2573.cpp) | O |
