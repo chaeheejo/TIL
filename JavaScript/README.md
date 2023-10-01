@@ -1,4 +1,4 @@
-### 화살표 함수 
+### 화살표 함수  
 ```jsx
 const normal = function() {
 	console.log('normal function')

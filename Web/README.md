@@ -5,7 +5,7 @@
 
 head : 문서에 대한 정의, title, css 내용이 들어간다.
 
-body : 실제 문서에 대한 내용, html과 script 내용이 들어간다.
+body : 실제 문서에 대한 내용, html과 script 내용이 들어간다. 
 
 ### 문서 타이틀
 
