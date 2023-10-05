@@ -6,112 +6,82 @@
 //
 
 #include <iostream>
+#include <queue>
+#include <tuple>
 using namespace std;
 
-int K;
-int board[4][8];
-int cmd[4];
+int N, M, K;
+int board[1000][1000];
+int visited[1000][1000][11];
 
-void rotate(int num, bool d) { //num을 d 방향으로 회전
-    if (!d) { //right
-        int temp = board[num][7];
-        for (int i = 7; i > 0; i--) {
-            board[num][i] = board[num][i - 1];
-        }
-        board[num][0] = temp;
-    }
-    else { //left
-        int temp = board[num][0];
-        for (int i = 0; i < 7; i++) {
-            board[num][i] = board[num][i + 1];
-        }
-        board[num][7] = temp;
-    }
-}
+int dxy[][2] = {
+    0,1,
+    1,0,
+    -1,0,
+    0,-1
+};
 
-void check(int num, bool d) {
-    int left = num;
-    bool ld = !d;
-    while (left - 1 > -1) {
-        if ((board[left][6] ^ board[left - 1][2]) == 1) {
-            cmd[left - 1] = ld;
-        }
-        else {
-            break;
-        }
-        left--;
-        ld = !ld;
-    }
+void bfs() {
+    queue<tuple<int, int, int>> q;
+    q.push({ 0,0,0 });
+    visited[0][0][0] = 1;
+    while (!q.empty()) {
+        int i = get<0>(q.front());
+        int j = get<1>(q.front());
+        int wall = get<2>(q.front());
+        q.pop();
 
-    int right = num;
-    bool rd = !d;
-    while (right + 1 < 4) {
-        if ((board[right][2] ^ board[right + 1][6]) == 1) {
-            cmd[right + 1] = rd;
+        for (int k = 0; k < 4; k++) {
+            int nx = i + dxy[k][0];
+            int ny = j + dxy[k][1];
+            if (nx < 0 || nx >= N || ny < 0 || ny >= M)
+                continue;
+
+            if (board[nx][ny] == 0) {
+                if (visited[nx][ny][wall] > 0) //방문한 적 있으면
+                    continue;
+                visited[nx][ny][wall] = visited[i][j][wall] + 1;
+                q.push({ nx,ny,wall });
+            }
+            else { //벽을 뚫어야 하면
+                if (wall+1 > K)
+                    continue;
+                if (visited[nx][ny][wall + 1] > 0) //방문한 적 있는지 확인
+                    continue;
+                visited[nx][ny][wall + 1] = visited[i][j][wall] + 1;
+                q.push({ nx,ny,wall+1 });
+            }
         }
-        else {
-            break;
-        }
-        right++;
-        rd = !rd;
     }
 }
 
 int main() {
+    ios::sync_with_stdio(0);
+    cin.tie(0);
 
-    for (int i = 0; i < 4; i++) {
+    cin >> N >> M >> K;
+
+    for (int i = 0; i < N; i++) {
         string temp;
         cin >> temp;
 
-        for (int j = 0; j < 8; j++) {
+        for (int j = 0; j < temp.size(); j++) {
             if (temp[j] == '1') board[i][j] = 1;
         }
     }
 
-    cin >> K;
+    bfs();
 
-    for (int i = 0; i < K; i++) {
-        int n, d;
-        cin >> n >> d;
-
-        n--;
-        if (d == -1) {
-            d = 1; //left
-        }
-        else {
-            d = 0;
-        }
-
-        for (int i = 0; i < 4; i++) {
-            cmd[i] = -1;
-        }
-
-        check(n, d);
-
-        for (int i = 0; i < 4; i++) {
-            if (cmd[i] != -1) {
-                rotate(i, cmd[i]);
-            }
-        }
-
-        rotate(n, d);
+    int answer = 2e9;
+    for (int k = 0; k <= K; k++) {
+        if (visited[N - 1][M - 1][k] == 0) continue;
+        answer = min(answer, visited[N - 1][M - 1][k]);
     }
 
-    int answer = 0;
-    if (board[0][0]) {
-        answer += 1;
-    }
-    if (board[1][0]) {
-        answer += 2;
-    }
-    if (board[2][0]) {
-        answer += 4;
-    }
-    if (board[3][0]) {
-        answer += 8;
-    }
-
-    cout << answer;
+    if (answer == 2e9)
+        cout << -1;
+    else
+        cout << answer;
 
     return 0;
 }
