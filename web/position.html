@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+
+   <style>
+     *{
+       border: 1px solid black;
+     }
+
+     /* 1. display vs position */
+     .position-fixed-parent{
+       height: 1000px;
+     }
+     .position-fixed-child1{
+       /* position은 설정하고 싶은 태그에 그냥 주면 됨
+       1) child1과 child2가 겹침 - display는 2차원 속성이나 position은 3차원 속성임을 확인할 수 있음
+       2) 자식들 모두 너비를 건들이지 않았는데 child1만 너비가 줄어듦 - position을 설정한 객체의 너비는 inline 속성이 적용*/
+       position: fixed;
+     }
+
+     /* 2. position-relative
+     원래 위치를 기반으로 위치를 설정 */
+     .position-relative-out{
+       height: 200px;
+     }
+     .position-relative-in2{
+       /* relative 태그가 없었다면 위치했을 원래 위치를 기준으로 top에 마진을 100px 줌 */
+       position: relative;
+       top: 100px;
+     }
+     .position-relative-in3{
+       position: relative;
+       left: 100px;
+     }
+
+     /* 3. position-absolute
+     부모 중 position을 가진 요소를 기준으로 위치를 잡음
+     때문에 parent에 relative를 주고, child에 absolute를 줘서 위치를 잡는 방법으로 쓰임 */
+     .position-absolute-out{
+       height: 200px;
+
+       position: relative;
+     }
+     .position-absolute-in2{
+       position: absolute;
+
+       /* position relative가 설정된 부모의 위치를 기준으로 top에 마진 30px
+       top: 0을 주면 부모의 위치로 가고, 아예 값 코드를 지우면 position이 설정되지 않은 본래의 위치로 */
+       top: 10px;
+     }
+     .position-absolute-in3{
+       position: absolute;
+       left: 50px;
+     }
+
+     /* 4. with transform */
+     .transform-parent{
+       height: 300px;
+       position: relative;
+     }
+     .transform-child2{
+       position: absolute;
+       top: 50%;
+
+       /* 객체의 좌측 상단을 기준으로 하기에 정중앙으로 위치하고 싶을 땐 transform 속성을 줘야 함 */
+       transform: translateY(-50%);
+     }
+     .transform-child3{
+       position: absolute;
+       bottom: 0;
+     }
+
+     /* 5. with z-index
+     값이 클수록 높은 우선순위를 할당, 3차원 요소에만 z-index가 유효하다.*/
+     .z-parent{
+       border: 1px solid black;
+       height: 300px;
+       position: relative;
+     }
+     .z-child1{
+       width: 50px;
+       height: 50px;
+       background-color: red;
+
+       z-index: 1000;
+     }
+     .z-child2{
+       width: 50px;
+       height: 50px;
+       background-color: blue;
+
+       position: absolute;
+       top: 10px;
+       left: 35px;
+       z-index: 100;
+
+     }
+     .z-child3{
+       width: 50px;
+       height: 50px;
+       background-color: green;
+
+       position: absolute;
+       top: 40px;
+       left: 20px;
+       z-index: 5;
+     }
+
+
+   </style>
+ </head>
+ <body>
+   <!-- 1. display vs position -->
+   <div class="position-fixed-parent">
+     <div class="position-fixed-child1">position-fixed-child1</div>
+     <div class="position-fixed-child2">position-fixed-child2</div>
+   </div>
+
+   <!-- 2. position-relative -->
+   <div class="position-relative-out">
+     <span class="position-relative-in1">position-relative-default</span>
+     <span class="position-relative-in2">position-relative-top</span>
+     <span class="position-relative-in3">position-relative-left</span>
+   </div>
+
+   <!-- 3. position-absolute -->
+   <div class="position-absolute-out">
+     <div class="position-absolute-in2">position-absolute-top</div>
+     <div class="position-absolute-in3">position-absolute-left</div>
+     <div class="position-absolute-in1">position-absolute-default</div>
+   </div>
+
+   <!-- 4. with transform -->
+   <div class="transform-parent">
+     <div class="transform-child1">transform-child1</div>
+     <div class="transform-child2">transform-child2</div>
+     <div class="transform-child3">transform-child3</div>
+   </div>
+
+   <!-- 5. with z-index -->
+   <div class="z-parent">
+     <div class="z-child1">z-child1</div>
+     <div class="z-child2">z-child2</div>
+     <div class="z-child3">z-child3</div>
+   </div>
+ </body>
+ </html> 
